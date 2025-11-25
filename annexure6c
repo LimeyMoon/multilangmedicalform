@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>বেক বিষণ্নতা মূল্যায়ন সারণি – ২য় সংস্করণ (BDI-II) — Bengali</title>
+  <style>
+    :root{--bg:#f7f9fc;--card:#fff;--accent:#2b6cb0;--muted:#666;}
+    body{font-family: "Helvetica Neue", Arial, sans-serif; background:var(--bg); color:#111; margin:0; padding:24px;}
+    .container{max-width:900px;margin:0 auto;}
+    header{margin-bottom:18px;}
+    h1{font-size:20px;margin:0 0 6px;}
+    p.lead{margin:0;color:var(--muted);}
+    .card{background:var(--card);border-radius:10px;padding:18px;box-shadow:0 6px 20px rgba(20,20,40,0.06);margin-top:12px;}
+    .instructions{font-size:14px;color:var(--muted);margin-bottom:12px;}
+    .question{padding:12px;border-radius:8px;border:1px solid #eef2f6;margin-bottom:10px;}
+    .q-title{font-weight:600;margin-bottom:6px;}
+    .options{display:flex;gap:12px;flex-wrap:wrap;}
+    .option{display:flex;align-items:flex-start;gap:6px;font-size:14px;}
+    label.small{font-size:13px;color:var(--muted);}
+    .controls{display:flex;gap:8px;align-items:center;margin-top:14px;}
+    button{background:var(--accent);color:#fff;border:none;padding:10px 14px;border-radius:8px;cursor:pointer;}
+    button.secondary{background:#e6edf7;color:var(--accent);}
+    .result{margin-top:14px;padding:12px;border-radius:8px;background:#f1f9ff;border:1px solid #d6e8ff;}
+    .interpret{font-weight:700;margin-top:6px;}
+    footer{margin-top:16px;color:var(--muted);font-size:13px;}
+    @media (max-width:640px){.options{flex-direction:column;}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>বেক বিষণ্নতা মূল্যায়ন সারণি – ২য় সংস্করণ (BDI-II)</h1>
+      <p class="lead">নির্দেশাবলি: যে কোনও একটি বাক্য নির্বাচন করুন যা গত দুই সপ্তাহে আপনার অনুভূতির সবচেয়ে সঠিক ছবিটি তুলে ধরে। প্রতিটি প্রশ্নে ৪টি বিকল্প রয়েছে (০–৩)। প্রতিটি প্রশ্নে শুধুমাত্র একটিই উত্তর চিহ্নিত করুন।</p>
+    </header>
+
+    <div class="card">
+      <div class="instructions">
+        <strong>নির্দেশ:</strong> প্রতিটি প্রশ্নের জন্য উপযুক্ত একটি বিকল্প (0–3) নির্বাচন করুন। শেষে "স্কোর গণনা করুন" বাটনে ক্লিক করুন।
+      </div>
+
+      <form id="bdiForm" onsubmit="return false;">
+        <!-- We'll generate 21 question blocks -->
+        <!-- For clarity the Bengali question texts are included verbatim from the user's content -->
+        <div id="questions">
+          <!-- Question 1 -->
+          <div class="question" id="q1">
+            <div class="q-title">১. বিষণ্নতা</div>
+            <div class="options">
+              <label class="option"><input type="radio" name="q1" value="0"> 0 – আমি দুঃখিত বোধ করি না।</label>
+              <label class="option"><input type="radio" name="q1" value="1"> 1 – আমি মাঝে occasionally দুঃখিত বোধ করি।</label>
+              <label class="option"><input type="radio" name="q1" value="2"> 2 – আমি প্রায়শই দুঃখিত থাকি।</label>
+              <label class="option"><input type="radio" name="q1" value="3"> 3 – আমি সবসময় খুব দুঃখিত থাকি এবং তা থেকে মুক্তি পাই না।</label>
+            </div>
+          </div>
+
+          <!-- Question 2 -->
+          <div class="question" id="q2">
+            <div class="q-title">২. হতাশা</div>
+            <div class="options">
+              <label class="option"><input type="radio" name="q2" value="0"> 0 – আমি ভবিষ্যৎ নিয়ে আশাবাদী।</label>
+              <label class="option"><input type="radio" name="q2" value="1"> 1 – আমি মাঝে মাঝে অনুভব করি ভবিষ্যৎ অনিশ্চিত।</label>
+              <label class="option"><input type="radio" name="q2" value="2"> 2 – আমি নিশ্চিত নই যে ভবিষ্যতে কিছু ভালো হবে।</label>
+              <label class="option"><input type="radio" name="q2" value="3"> 3 – আমি বিশ্বাস করি ভবিষ্যতে কিছুই ভালো হবে না।</label>
+            </div>
+          </div>
+
+          <!-- Question 3 -->
+          <div class="question" id="q3">
+            <div class="q-title">৩. ব্যর্থতা</div>
+            <div class="options">
+              <label class="option"><input type="radio" name="q3" value="0"> 0 – আমি নিজেকে ব্যর্থ মনে করি না।</label>
+              <label class="option"><input type="radio" name="q3" value="1"> 1 – আমি আমার সাফল্য নিয়ে সন্দিহান।</label>
+              <label class="option"><input type="radio" name="q3" value="2"> 2 – আমি অনুভব করি আমি প্রায় সবক্ষেত্রে ব্যর্থ।</label>
+              <label class="option"><input type="radio" name="q3" value="3"> 3 – আমি নিজেকে একটি সম্পূর্ণ ব্যর্থতা মনে করি।</label>
+            </div>
+          </div>
+
+          <!-- Question 4 -->
+          <div class="question" id="q4">
+            <div class="q-title">৪. আনন্দহীনতা</div>
+            <div class="options">
+              <label class="option"><input type="radio" name="q4" value="0"> 0 – আমি আগের মতোই আনন্দ পাই।</label>
+              <label class="option"><input type="radio" name="q4" value="1"> 1 – অনেক কিছু আর আগের মতো আনন্দদায়ক মনে হয় না।</label>
+              <label class="option"><input type="radio" name="q4" value="2"> 2 – আমি কিছুতেই আনন্দ পাই না।</label>
+              <label class="option"><input type="radio" name="q4" value="3"> 3 – আমার কোনো কিছুর প্রতিই আগ্রহ বা আনন্দ নেই।</label>
+            </div>
+          </div>
+
+          <!-- Question 5 -->
+          <div class="question" id="q5">
+            <div class="q-title">৫. অপরাধবোধ</div>
+            <div class="options">
+              <label class="option"><input type="radio" name="q5" value="0"> 0 – আমার কোনো অপরাধবোধ নেই।</label>
+              <label class="option"><input type="radio" name="q5" value="1"> 1 – মাঝে মাঝে নিজেকে দোষী বোধ করি।</label>
+              <label class="option"><input type="radio" name="q5" value="2"> 2 – প্রায়ই আমি নিজেকে দোষী ভাবি।</label>
+              <label class="option"><input type="radio" name="q5" value="3"> 3 – আমি নিজেকে সব সময় দোষী অনুভব করি।</label>
+            </div>
+          </div>
+
+          <!-- Question 6 -->
+          <div class="question" id="q6">
+            <div class="q-title">৬. শাস্তি পেতে ইচ্ছা</div>
+            <div class="options">
+              <label class="option"><input type="radio" name="q6" value="0"> 0 – আমি মনে করি না আমায় শাস্তি পাওয়া উচিত।</label>
+              <label class="option"><input type="radio" name="q6" value="1"> 1 – আমি মনে করি আমার কিছু ভুলের জন্য শাস্তি প্রাপ্য।</label>
+              <label class="option"><input type="radio" name="q6" value="2"> 2 – আমি মনে করি আমাকে শাস্তি দেওয়া উচিত।</label>
+              <label class="option"><input type="radio" name="q6" value="3"> 3 – আমি চাই কেউ আমাকে শাস্তি দিক।</label>
+            </div>
+          </div>
+
+          <!-- Question 7 -->
+          <div class="question" id="q7">
+            <div class="q-title">৭. আত্ম-বিদ্বেষ</div>
+            <div class="options">
+              <label class="option"><input type="radio" name="q7" value="0"> 0 – আমি নিজেকে পছন্দ করি।</label>
+              <label class="option"><input type="radio" name="q7" value="1"> 1 – আমি নিজে সম্পর্কে খারাপ ভাবি।</label>
+              <label class="option"><input type="radio" name="q7" value="2"> 2 – আমি নিজেকে আর পছন্দ করি না।</label>
+              <label class="option"><input type="radio" name="q7" value="3"> 3 – আমি নিজেকে ঘৃণা করি।</label>
+            </div>
+          </div>
+
+          <!-- Question 8 -->
+          <div class="question" id="q8">
+            <div class="q-title">৮. আত্ম-সমালোচনা</div>
+            <div class="options">
+              <label class="option"><input type="radio" name="q8" value="0"> 0 – আমি নিজেকে দোষ দিই না।</label>
+              <label class="option"><input type="radio" name="q8" value="1"> 1 – আমি নিজেকে অনেক দোষ দিই।</label>
+              <label class="option"><input type="radio" name="q8" value="2"> 2 – আমি আমার ভুলের জন্য নিজেকেই পুরোপুরি দায়ী করি।</label>
+              <label class="option"><input type="radio" name="q8" value="3"> 3 – আমি অনুভব করি আমি যা করেছি সব ভুল আর তাতে আমি দায়ী।</label>
+            </div>
+          </div>
+
+          <!-- Question 9 -->
+          <div class="question" id="q9">
+            <div class="q-title">৯. আত্মহত্যার চিন্তা</div>
+            <div class="options">
+              <label class="option"><input type="radio" name="q9" value="0"> 0 – আমার মৃত্যু বা আত্মহত্যার কোনও চিন্তা নেই।</label>
+              <label class="option"><input type="radio" name="q9" value="1"> 1 – আমি মনে করি আমার না থাকাই ভালো হতো।</label>
+              <label class="option"><input type="radio" name="q9" value="2"> 2 – মাঝে মাঝে আত্মহত্যার চিন্তা আসে।</label>
+              <label class="option"><input type="radio" name="q9" value="3"> 3 – আমি আত্মহত্যা করার পরিকল্পনা করেছি।</label>
+            </div>
+          </div>
+
+          <!-- Question 10 -->
+          <div class="question" id="q10">
+            <div class="q-title">১০. কান্না</div>
+            <div class="options">
+              <label class="option"><input type="radio" name="q10" value="0"> 0 – আমি সাধারণত কাঁদি না।</label>
+              <label class="option"><input type="radio" name="q10" value="1"> 1 – আমি আগের চেয়ে বেশি কাঁদি।</label>
+              <label class="option"><input type="radio" name="q10" value="2"> 2 – আমি তুচ্ছ বিষয়েও কাঁদি।</label>
+              <label class="option"><input type="radio" name="q10" value="3"> 3 – আমি নিয়মিত কান্না করি ও থামাতে পারি না।</label>
+            </div>
+          </div>
+
+          <!-- Question 11 -->
+          <div class="question" id="q11">
+            <div class="q-title">১১. বিষণ্ন মেজাজ</div>
+            <div class="options">
+              <label class="option"><input type="radio" name="q11" value="0"> 0 – আমি কিছুতেই বিরক্ত হই না।</label>
+              <label class="option"><input type="radio" name="q11" value="1"> 1 – আমি কিছু ক্ষেত্রে বিরক্ত হই।</label>
+              <label class="option"><input type="radio" name="q11" value="2"> 2 – আমি প্রায়ই বিরক্ত বা রাগান্বিত হই।</label>
+              <label class="option"><input type="radio" name="q11" value="3"> 3 – আমি সবসময় বিরক্ত বোধ করি।</label>
+            </div>
+          </div>
+
+          <!-- Question 12 -->
+          <div class="question" id="q12">
+            <div class="q-title">১২. সমাজবিমুখতা</div>
+            <div class="options">
+              <label class="option"><input type="radio" name="q12" value="0"> 0 – আমি সমাজ ও মানুষের সঙ্গে স্বাভাবিক মেলামেশা করি।</label>
+              <label class="option"><input type="radio" name="q12" value="1"> 1 – আমি আগের চেয়ে কম সামাজিক হই।</label>
+              <label class="option"><input type="radio" name="q12" value="2"> 2 – আমি সামাজিক মেলামেশায় অনাগ্রহী হয়ে পড়েছি।</label>
+              <label class="option"><input type="radio" name="q12" value="3"> 3 – আমি একেবারেই কারও সঙ্গে মেলামেশা করি না।</label>
+            </div>
+          </div>
+
+          <!-- Question 13 -->
+          <div class="question" id="q13">
+            <div class="q-title">১৩. সিদ্ধান্তহীনতা</div>
+            <div class="options">
+              <label class="option"><input type="radio" name="q13" value="0"> 0 – আমি সহজেই সিদ্ধান্ত নিতে পারি।</label>
+              <label class="option"><input type="radio" name="q13" value="1"> 1 – এখন সিদ্ধান্ত নিতে একটু সময় লাগে।</label>
+              <label class="option"><input type="radio" name="q13" value="2"> 2 – আমাকে সিদ্ধান্ত নিতে দোটানায় পড়তে হয়।</label>
+              <label class="option"><input type="radio" name="q13" value="3"> 3 – আমি কোনো সিদ্ধান্তই নিতে পারি না।</label>
+            </div>
+          </div>
+
+          <!-- Question 14 -->
+          <div class="question" id="q14">
+            <div class="q-title">১৪. দেহ-ভাবনার পরিবর্তন</div>
+            <div class="options">
+              <label class="option"><input type="radio" name="q14" value="0"> 0 – আমি আমার চালচলন ও শরীর নিয়ে সন্তুষ্ট।</label>
+              <label class="option"><input type="radio" name="q14" value="1"> 1 – মাঝে মাঝে নিজেকে অস্বাভাবিক মনে হয়।</label>
+              <label class="option"><input type="radio" name="q14" value="2"> 2 – আমি নিজেকে বিকৃত দেখে অসহ্য বোধ করি।</label>
+              <label class="option"><input type="radio" name="q14" value="3"> 3 – আমি নিজেকে এত খারাপ দেখি যে আয়নাও দেখতে চাই না।</label>
+            </div>
+          </div>
+
+          <!-- Question 15 -->
+          <div class="question" id="q15">
+            <div class="q-title">১৫. কার্যক্ষমতা</div>
+            <div class="options">
+              <label class="option"><input type="radio" name="q15" value="0"> 0 – আমি প্রতিদিনের কাজ করতে পারি।</label>
+              <label class="option"><input type="radio" name="q15" value="1"> 1 – কিছু কাজ করতে কষ্ট হয়।</label>
+              <label class="option"><input type="radio" name="q15" value="2"> 2 – আমি প্রায় কোনো কাজই করতে পারি না।</label>
+              <label class="option"><input type="radio" name="q15" value="3"> 3 – কোনো কাজই এখন আর আমি করতে পারি না।</label>
+            </div>
+          </div>
+
+          <!-- Question 16 -->
+          <div class="question" id="q16">
+            <div class="q-title">১৬. ঘুম সমস্যা</div>
+            <div class="options">
+              <label class="option"><input type="radio" name="q16" value="0"> 0 – আমি প্রতিদিন স্বাভাবিকভাবে ঘুমাই।</label>
+              <label class="option"><input type="radio" name="q16" value="1"> 1 – আমার কখনো কখনো ঘুমে সমস্যা হয়।</label>
+              <label class="option"><input type="radio" name="q16" value="2"> 2 – প্রায়ই ঘুমের সমস্যা হয়।</label>
+              <label class="option"><input type="radio" name="q16" value="3"> 3 – আমি রাতে ঘুমাতে পারি না বা খুব কম ঘুমাই।</label>
+            </div>
+          </div>
+
+          <!-- Question 17 -->
+          <div class="question" id="q17">
+            <div class="q-title">১৭. ক্লান্তিভাব</div>
+            <div class="options">
+              <label class="option"><input type="radio" name="q17" value="0"> 0 – আমি স্বাভাবিকভাবে শক্তিময় বোধ করি।</label>
+              <label class="option"><input type="radio" name="q17" value="1"> 1 – আমি আগের তুলনায় দ্রুত ক্লান্ত হই।</label>
+              <label class="option"><input type="radio" name="q17" value="2"> 2 – আমি খুব সহজে পরিশ্রান্ত হই।</label>
+              <label class="option"><input type="radio" name="q17" value="3"> 3 – সবসময় ক্লান্ত ও শক্তিহীন বোধ করি।</label>
+            </div>
+          </div>
+
+          <!-- Question 18 -->
+          <div class="question" id="q18">
+            <div class="q-title">১৮. ক্ষুধার পরিবর্তন</div>
+            <div class="options">
+              <label class="option"><input type="radio" name="q18" value="0"> 0 – আমার ক্ষুধা স্বাভাবিক।</label>
+              <label class="option"><input type="radio" name="q18" value="1"> 1 – আমার ক্ষুধা কিছুটা বেড়েছে/কমেছে।</label>
+              <label class="option"><input type="radio" name="q18" value="2"> 2 – আমার ক্ষুধা অনেকটাই কমে গেছে/বেড়েছে।</label>
+              <label class="option"><input type="radio" name="q18" value="3"> 3 – আমার ক্ষুধা পুরো চলে গেছে / অত্যধিক বেড়েছে।</label>
+            </div>
+          </div>
+
+          <!-- Question 19 -->
+          <div class="question" id="q19">
+            <div class="q-title">১৯. ওজন পরিবর্তন</div>
+            <div class="options">
+              <label class="option"><input type="radio" name="q19" value="0"> 0 – আমি সাম্প্রতিক সময়ে ওজনের কোনও পরিবর্তন লক্ষ্য করিনি।</label>
+              <label class="option"><input type="radio" name="q19" value="1"> 1 – সামান্য ওজন হ্রাস/বৃদ্ধি হয়েছে।</label>
+              <label class="option"><input type="radio" name="q19" value="2"> 2 – উল্লেখযোগ্য ওজন হ্রাস/বৃদ্ধি হয়েছে।</label>
+              <label class="option"><input type="radio" name="q19" value="3"> 3 – ওজন হঠাৎ করে অতিরিক্ত কমে গেছে বা বেড়ে গেছে।</label>
+            </div>
+          </div>
+
+          <!-- Question 20 -->
+          <div class="question" id="q20">
+            <div class="q-title">২০. শারীরিক সমস্যা নিয়ে উদ্বেগ</div>
+            <div class="options">
+              <label class="option"><input type="radio" name="q20" value="0"> 0 – আমার স্বাস্থ্য নিয়ে আমি চিন্তিত নই।</label>
+              <label class="option"><input type="radio" name="q20" value="1"> 1 – মাঝে মাঝে দুশ্চিন্তা করি।</label>
+              <label class="option"><input type="radio" name="q20" value="2"> 2 – প্রায়ই মনে হয় শরীর খারাপ হচ্ছে।</label>
+              <label class="option"><input type="radio" name="q20" value="3"> 3 – সব সময় অসুস্থতা নিয়ে আতঙ্কে থাকি।</label>
+            </div>
+          </div>
+
+          <!-- Question 21 -->
+          <div class="question" id="q21">
+            <div class="q-title">২১. যৌন আগ্রহ হ্রাস</div>
+            <div class="options">
+              <label class="option"><input type="radio" name="q21" value="0"> 0 – আমার যৌন আগ্রহে কোনো পরিবর্তন নেই।</label>
+              <label class="option"><input type="radio" name="q21" value="1"> 1 – আমার আগ্রহ কিছুটা হ্রাস পেয়েছে।</label>
+              <label class="option"><input type="radio" name="q21" value="2"> 2 – আমার আগ্রহ অনেকটাই কমে গেছে।</label>
+              <label class="option"><input type="radio" name="q21" value="3"> 3 – আমার যৌন ইচ্ছা সম্পূর্ণরূপে চলে গেছে।</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button type="button" onclick="calculateScore()">স্কোর গণনা করুন</button>
+          <button type="button" class="secondary" onclick="resetForm()">রিসেট করুন</button>
+          <div style="margin-left:auto;font-size:14px;color:var(--muted);">মোট স্কোর: <span id="total">—</span> / 63</div>
+        </div>
+
+        <div id="result" class="result" style="display:none;">
+          <div id="scoreText">আপনার স্কোর: <strong id="scoreVal">0</strong> / 63</div>
+          <div class="interpret" id="interpretText"></div>
+          <div style="margin-top:8px;font-size:13px;color:var(--muted);">
+            <strong>ব্যাখ্যা (Interpretation):</strong>
+            <ul>
+              <li>0–13 : বিষণ্নতা নেই বা নামমাত্র</li>
+              <li>14–19 : হালকা বিষণ্নতা</li>
+              <li>20–28 : মাঝারি মাত্রার বিষণ্নতা</li>
+              <li>29–63 : তীব্র বিষণ্নতা</li>
+            </ul>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <footer>
+      <p>নোট: এই সার্ভে কেবল স্ক্রিনিং উদ্দেশ্যে — নির্ণয়ের প্রতিস্থাপন নয়। যদি উচ্চ স্কোর বা আত্মহত্যার চিন্তা থাকে, দ্রুত মানসিক স্বাস্থ্যের পেশাদারের সাথে যোগাযোগ করুন বা স্থানীয় জরুরি সেবা ব্যবহার করুন।</p>
+    </footer>
+  </div>
+
+  <script>
+    function calculateScore(){
+      const totalSpan = document.getElementById('total');
+      let total = 0;
+      let unanswered = [];
+      for(let i=1;i<=21;i++){
+        const radios = document.getElementsByName('q'+i);
+        let found = false;
+        for(const r of radios){
+          if(r.checked){
+            found = true;
+            total += parseInt(r.value,10);
+            break;
+          }
+        }
+        if(!found) unanswered.push(i);
+      }
+
+      // show result even if some unanswered, but warn
+      document.getElementById('total').textContent = total;
+      const resultBox = document.getElementById('result');
+      document.getElementById('scoreVal').textContent = total;
+
+      // Interpretation
+      let interp = '';
+      if(total <= 13) interp = 'বিষণ্নতা নেই বা নামমাত্র (0–13)';
+      else if(total <= 19) interp = 'হালকা বিষণ্নতা (14–19)';
+      else if(total <= 28) interp = 'মাঝারি মাত্রার বিষণ্নতা (20–28)';
+      else interp = 'তীব্র বিষণ্নতা (29–63)';
+      document.getElementById('interpretText').textContent = interp;
+      resultBox.style.display = 'block';
+
+      if(unanswered.length>0){
+        // gentle note: do not block scoring
+        const msg = 'নোট: কিছুম প্রশ্নে উত্তর দেওয়া হয়নি (প্রশ্ন নম্বর: ' + unanswered.join(', ') + '). মোট স্কোর অংশীয় হতে পারে।';
+        alert(msg);
+      }
+    }
+
+    function resetForm(){
+      document.getElementById('bdiForm').reset();
+      document.getElementById('total').textContent = '—';
+      document.getElementById('result').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
