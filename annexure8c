@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ডার্মাটোলজিক্যাল লাইফ কোয়ালিটি ইনডেক্স (DLQI)</title>
+  <style>
+    body { font-family: "Noto Sans Bengali", "Lato", Arial, sans-serif; line-height:1.5; padding:20px; color:#111; }
+    h1 { font-size:1.6rem; margin-bottom:0.25rem; }
+    p.instructions { margin-top:0; color:#333; }
+    .question { border:1px solid #e2e2e2; padding:12px; margin:12px 0; border-radius:8px; background:#fafafa; }
+    .qtitle { font-weight:600; margin-bottom:8px; }
+    .options label { display:block; margin:4px 0; cursor:pointer; }
+    .score-area { margin-top:18px; padding:12px; border-radius:8px; background:#f3f7ff; border:1px solid #d7e1ff; }
+    button { padding:8px 12px; border-radius:6px; border:0; background:#2b6bf6; color:#fff; cursor:pointer; }
+    button:active { transform:translateY(1px); }
+    .result { margin-top:12px; font-weight:700; }
+    .interpret { margin-top:8px; }
+    @media print {
+      button { display:none; }
+      body { padding:8px; }
+    }
+  </style>
+</head>
+<body>
+  <h1>ডার্মাটোলজিক্যাল লাইফ কোয়ালিটি ইনডেক্স (DLQI)</h1>
+  <p class="instructions">
+    নির্দেশাবলী:এই প্রশ্নাবলীর উদ্দেশ্য হল গত এক সপ্তাহে আপনার ত্বকের সমস্যাটি আপনার দৈনন্দিন জীবনের উপর কী প্রভাব ফেলেছে তা জানা। অনুগ্রহ করে প্রতিটি প্রশ্ন পড়ুন এবং শুধুমাত্র একটি উত্তর দিন যা আপনার বাস্তব অবস্থার সবচেয়ে কাছাকাছি।
+  </p>
+
+  <form id="dlqiForm" onsubmit="return false;">
+    <div class="question" id="q1">
+      <div class="qtitle">১. গত এক সপ্তাহে আপনার ত্বক কতটা চুলকানো, জ্বলন, কষ্টদায়ক বা ফোঁড়ার মতো অনুভূত হয়েছে?</div>
+      <div class="options">
+        <label><input type="radio" name="q1" value="3"> খুব বেশি (৩)</label>
+        <label><input type="radio" name="q1" value="2"> অনেকটা (২)</label>
+        <label><input type="radio" name="q1" value="1"> কিছুটা (১)</label>
+        <label><input type="radio" name="q1" value="0"> একেবারেই না (০)</label>
+      </div>
+    </div>
+
+    <div class="question" id="q2">
+      <div class="qtitle">২. আপনার ত্বকের কারণে আপনি গত এক সপ্তাহে কতটা লজ্জিত বা আত্ম-সচেতন বোধ করেছেন?</div>
+      <div class="options">
+        <label><input type="radio" name="q2" value="3"> খুব বেশি (৩)</label>
+        <label><input type="radio" name="q2" value="2"> অনেকটা (২)</label>
+        <label><input type="radio" name="q2" value="1"> কিছুটা (১)</label>
+        <label><input type="radio" name="q2" value="0"> একেবারেই না (০)</label>
+      </div>
+    </div>
+
+    <div class="question" id="q3">
+      <div class="qtitle">৩. আপনার ত্বকের সমস্যা কি গত এক সপ্তাহে আপনার কেনাকাটা/বাড়ির যত্ন/বাগান করার কাজে ব্যাঘাত ঘটিয়েছে?</div>
+      <div class="options">
+        <label><input type="radio" name="q3" value="3"> খুব বেশি (৩)</label>
+        <label><input type="radio" name="q3" value="2"> অনেকটা (২)</label>
+        <label><input type="radio" name="q3" value="1"> কিছুটা (১)</label>
+        <label><input type="radio" name="q3" value="0"> একেবারেই না (০)</label>
+        <label><input type="radio" name="q3" value="0"> প্রযোজ্য নয় (-)</label>
+      </div>
+    </div>
+
+    <div class="question" id="q4">
+      <div class="qtitle">৪. আপনার ত্বক কি গত এক সপ্তাহে আপনি কী পোশাক পরেছেন, তাতে প্রভাব ফেলেছে?</div>
+      <div class="options">
+        <label><input type="radio" name="q4" value="3"> খুব বেশি (৩)</label>
+        <label><input type="radio" name="q4" value="2"> অনেকটা (২)</label>
+        <label><input type="radio" name="q4" value="1"> কিছুটা (১)</label>
+        <label><input type="radio" name="q4" value="0"> একেবারেই না (০)</label>
+        <label><input type="radio" name="q4" value="0"> প্রযোজ্য নয় (-)</label>
+      </div>
+    </div>
+
+    <div class="question" id="q5">
+      <div class="qtitle">৫. আপনার ত্বকের সমস্যা কি গত এক সপ্তাহে আপনার সামাজিক কিংবা অবকাশ যাপনের ক্রিয়াকলাপের উপর প্রভাব ফেলেছে?</div>
+      <div class="options">
+        <label><input type="radio" name="q5" value="3"> খুব বেশি (৩)</label>
+        <label><input type="radio" name="q5" value="2"> অনেকটা (২)</label>
+        <label><input type="radio" name="q5" value="1"> কিছুটা (১)</label>
+        <label><input type="radio" name="q5" value="0"> একেবারেই না (০)</label>
+        <label><input type="radio" name="q5" value="0"> প্রযোজ্য নয় (-)</label>
+      </div>
+    </div>
+
+    <div class="question" id="q6">
+      <div class="qtitle">৬. আপনি কি গত এক সপ্তাহে খেলাধুলা বা ব্যায়াম করতে পারেননি আপনার ত্বকের কারণে?</div>
+      <div class="options">
+        <label><input type="radio" name="q6" value="3"> খুব বেশি (৩)</label>
+        <label><input type="radio" name="q6" value="2"> অনেকটা (২)</label>
+        <label><input type="radio" name="q6" value="1"> কিছুটা (১)</label>
+        <label><input type="radio" name="q6" value="0"> একেবারেই না (০)</label>
+        <label><input type="radio" name="q6" value="0"> প্রযোজ্য নয় (-)</label>
+      </div>
+    </div>
+
+    <div class="question" id="q7">
+      <div class="qtitle">৭. আপনার ত্বকের কারণে আপনি কি গত এক সপ্তাহে কাজ বা পড়াশোনা করতে পারেননি?</div>
+      <div class="options">
+        <label><input type="radio" name="q7" value="3"> হ্যাঁ (৩)</label>
+        <label><input type="radio" name="q7" value="0"> না (০)</label>
+      </div>
+      <div style="margin-top:8px; font-size:0.95rem;">
+        <em>না হলে, এ সময়ে আপনার ত্বক কতটা সমস্যা বাড়িয়েছে?</em>
+        <div class="options" style="margin-top:6px;">
+          <label><input type="radio" name="q7b" value="2"> অনেকটা (২)</label>
+          <label><input type="radio" name="q7b" value="1"> কিছুটা (১)</label>
+          <label><input type="radio" name="q7b" value="0"> একেবারেই না (০)</label>
+          <label><input type="radio" name="q7b" value="0"> প্রযোজ্য নয় (-)</label>
+        </div>
+        <div style="font-size:0.9rem; color:#444; margin-top:6px;">
+          <small>নোট: প্রশ্ন ৭-এর জন্য "হ্যাঁ" নির্বাচন করলে সেটি ৩ পয়েন্ট হিসেবে যোগ হবে। "না" নির্বাচন করলে উপরের “না হলে…” অংশ থেকে ০–২ পয়েন্ট বেছে নিন (বা প্রযোজ্য নয়=০)।</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="question" id="q8">
+      <div class="qtitle">৮. আপনি কি অনুভব করেছেন যে আপনার ত্বক আপনার সঙ্গী, আত্মীয় বা বন্ধুর সঙ্গে সম্পর্কে প্রভাব ফেলেছে?</div>
+      <div class="options">
+        <label><input type="radio" name="q8" value="3"> খুব বেশি (৩)</label>
+        <label><input type="radio" name="q8" value="2"> অনেকটা (২)</label>
+        <label><input type="radio" name="q8" value="1"> কিছুটা (১)</label>
+        <label><input type="radio" name="q8" value="0"> একেবারেই না (০)</label>
+        <label><input type="radio" name="q8" value="0"> প্রযোজ্য নয় (-)</label>
+      </div>
+    </div>
+
+    <div class="question" id="q9">
+      <div class="qtitle">৯. আপনার ত্বকের সমস্যা কি আপনার যৌন জীবনে অসুবিধা সৃষ্টি করেছে?</div>
+      <div class="options">
+        <label><input type="radio" name="q9" value="3"> খুব বেশি (৩)</label>
+        <label><input type="radio" name="q9" value="2"> অনেকটা (২)</label>
+        <label><input type="radio" name="q9" value="1"> কিছুটা (১)</label>
+        <label><input type="radio" name="q9" value="0"> একেবারেই না (০)</label>
+        <label><input type="radio" name="q9" value="0"> প্রযোজ্য নয় (-)</label>
+      </div>
+    </div>
+
+    <div class="question" id="q10">
+      <div class="qtitle">১০. গত এক সপ্তাহে আপনার ত্বকের চিকিৎসা কি সময় নষ্ট করেছে, ছাড়পত্র তৈরিতে সমস্যা করেছে, বা আপনার দৈনন্দিন জীবনে বিঘ্ন ঘটিয়েছে?</div>
+      <div class="options">
+        <label><input type="radio" name="q10" value="3"> খুব বেশি (৩)</label>
+        <label><input type="radio" name="q10" value="2"> অনেকটা (২)</label>
+        <label><input type="radio" name="q10" value="1"> কিছুটা (১)</label>
+        <label><input type="radio" name="q10" value="0"> একেবারেই না (০)</label>
+      </div>
+    </div>
+
+    <div class="score-area">
+      <button type="button" onclick="calculateDLQI()">স্কোর গণনা করুন</button>
+      <div class="result" id="totalScore">মোট স্কোর: — / ৩০</div>
+      <div class="interpret" id="interpretation"></div>
+    </div>
+  </form>
+
+  <script>
+    function getRadioValue(name) {
+      const el = document.querySelector('input[name="' + name + '"]:checked');
+      return el ? parseInt(el.value, 10) : 0;
+    }
+
+    function calculateDLQI() {
+      // Questions 1-6, 8-10 straightforward
+      const q1 = getRadioValue('q1');
+      const q2 = getRadioValue('q2');
+      const q3 = getRadioValue('q3');
+      const q4 = getRadioValue('q4');
+      const q5 = getRadioValue('q5');
+      const q6 = getRadioValue('q6');
+      // Q7 logic: if q7 == 3 (Yes) use that; else use q7b selection
+      const q7_yes = document.querySelector('input[name="q7"][value="3"]:checked');
+      let q7 = 0;
+      if (q7_yes) q7 = 3;
+      else {
+        q7 = getRadioValue('q7b');
+      }
+      const q8 = getRadioValue('q8');
+      const q9 = getRadioValue('q9');
+      const q10 = getRadioValue('q10');
+
+      const total = q1+q2+q3+q4+q5+q6+q7+q8+q9+q10;
+      document.getElementById('totalScore').textContent = 'মোট স্কোর: ' + total + ' / 30';
+
+      let interpretation = '';
+      if (total >= 0 && total <= 1) {
+        interpretation = 'স্কোর সীমা: 0–1 — কোনো প্রভাব নেই';
+      } else if (total >= 2 && total <= 5) {
+        interpretation = 'স্কোর সীমা: 2–5 — অল্প প্রভাব';
+      } else if (total >= 6 && total <= 10) {
+        interpretation = 'স্কোর সীমা: 6–10 — মাঝারি প্রভাব';
+      } else if (total >= 11 && total <= 20) {
+        interpretation = 'স্কোর সীমা: 11–20 — বড় প্রভাব';
+      } else if (total >= 21 && total <= 30) {
+        interpretation = 'স্কোর সীমা: 21–30 — অত্যন্ত বড় প্রভাব';
+      }
+      document.getElementById('interpretation').textContent = interpretation;
+    }
+  </script>
+
+  <hr style="margin-top:26px;">
+  <p style="font-size:0.95rem; color:#444;">
+    স্কোরিং: প্রতিটি প্রশ্নের উত্তর অনুযায়ী ০–৩ নম্বর দিন। সমস্ত প্রশ্নের স্কোর যোগ করে মোট স্কোর নির্ধারণ করুন। মোট স্কোর: ______ /৩০ এবং উপরোক্ত সীমা অনুযায়ী ব্যাখ্যা করুন।
+  </p>
+</body>
+</html>
