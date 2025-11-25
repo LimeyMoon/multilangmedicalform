@@ -1,404 +1,222 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Vitiligo CRF & Questionnaires - Web Form</title>
+<meta charset="UTF-8">
+<title>BDI-II – Annexure VI A</title>
 <style>
-  body{font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial; line-height:1.5; padding:20px; max-width:980px;margin:auto;background:#f7f8fb;color:#111}
-  h1,h2,h3{color:#0b3d91}
-  .section{background:#fff;border:1px solid #e3e6ee;padding:16px;margin:18px 0;border-radius:8px;box-shadow:0 1px 2px rgba(20,20,50,0.03)}
-  label{display:block;margin:8px 0 4px;font-weight:600}
-  input[type="text"], input[type="date"], input[type="number"], textarea, select{width:100%;padding:8px;border-radius:6px;border:1px solid #d6dbe8}
-  .row{display:flex;gap:12px}
-  .col{flex:1}
-  small{color:#445}
-  .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-  .question{margin:6px 0;padding:8px;border-radius:6px}
-  .inline{display:inline-block;margin-right:12px}
-  button{background:#0b6ef6;color:white;border:none;padding:10px 14px;border-radius:8px;cursor:pointer}
-  .result{margin-top:12px;padding:10px;background:#eef6ff;border-radius:6px}
-  .score{font-weight:700;color:#0b6ef6}
-  .muted{color:#666;font-size:0.95em}
+    body { font-family: Arial, sans-serif; max-width: 900px; margin: auto; padding: 20px; }
+    h1 { color: #1546a0; }
+    .question { background: #f7f7f7; padding: 12px; border-radius: 8px; margin-bottom: 12px; }
+    .option { margin: 6px 0; }
+    .result { padding: 12px; background: #e8f2ff; border-radius: 8px; margin-top: 20px; font-size: 18px; }
 </style>
 </head>
 <body>
-<h1>Case Record Form (CRF) — Vitiligo Study</h1>
-<p class="muted">Converted to an HTML form from the uploaded PDF. Source: the file you provided. fileciteturn0file0</p>
 
-<form id="crfForm" onsubmit="return false;">
+<h1>BDI-II – Beck Depression Inventory (Annexure VI A)</h1>
+<p>Select one option per question. Each option has a score value (0–3).</p>
 
-  <section class="section">
-    <h2>PATIENT DETAILS</h2>
-    <div class="grid">
-      <div>
-        <label for="crf_no">CRF No</label>
-        <input id="crf_no" name="crf_no" type="text">
-      </div>
-      <div>
-        <label for="enroll_date">Date of Enrollment</label>
-        <input id="enroll_date" name="enroll_date" type="date">
-      </div>
-      <div>
-        <label for="opd_no">OPD Registration No</label>
-        <input id="opd_no" name="opd_no" type="text">
-      </div>
-      <div>
-        <label for="patient_name">Name of Patient</label>
-        <input id="patient_name" name="patient_name" type="text">
-      </div>
-      <div>
-        <label for="age_sex">Age / Sex</label>
-        <input id="age_sex" name="age_sex" type="text" placeholder="e.g., 34 / Male">
-      </div>
-      <div>
-        <label for="contact">Contact No</label>
-        <input id="contact" name="contact" type="text">
-      </div>
-      <div style="grid-column:1 / -1">
-        <label for="address">Address</label>
-        <textarea id="address" name="address" rows="2"></textarea>
-      </div>
-    </div>
-  </section>
+<form id="bdiForm">
 
-  <section class="section">
-    <h2>SOCIODEMOGRAPHIC DETAILS</h2>
-    <div class="grid">
-      <div>
-        <label>Marital Status</label>
-        <select name="marital_status">
-          <option value="">-- select --</option>
-          <option>Married</option>
-          <option>Unmarried</option>
-          <option>Other</option>
-        </select>
-      </div>
-      <div>
-        <label>Education</label>
-        <select name="education">
-          <option value="">-- select --</option>
-          <option>Illiterate</option>
-          <option>Primary</option>
-          <option>Secondary</option>
-          <option>Graduate or above</option>
-        </select>
-      </div>
-      <div>
-        <label>Occupation</label>
-        <select name="occupation">
-          <option value="">-- select --</option>
-          <option>Employed</option>
-          <option>Unemployed</option>
-          <option>Student</option>
-          <option>Housewife</option>
-          <option>Other</option>
-        </select>
-      </div>
-      <div>
-        <label>Socioeconomic status</label>
-        <select name="ses">
-          <option value="">-- select --</option>
-          <option>BPL</option>
-          <option>APL</option>
-        </select>
-      </div>
-      <div>
-        <label>Monthly Income</label>
-        <input name="monthly_income" type="text">
-      </div>
-      <div>
-        <label>Religion</label>
-        <select name="religion">
-          <option value="">-- select --</option>
-          <option>Hindu</option>
-          <option>Muslim</option>
-          <option>Christian</option>
-          <option>Other</option>
-        </select>
-      </div>
-    </div>
-    <div style="margin-top:10px">
-      <label>Family history of vitiligo/autoimmune disease</label>
-      <div class="inline"><label><input type="radio" name="family_history" value="Yes"> Yes</label></div>
-      <div class="inline"><label><input type="radio" name="family_history" value="No" checked> No</label></div>
-      <div style="margin-top:6px"><label>If yes, specify</label><input name="family_history_specify" type="text"></div>
-    </div>
-  </section>
+<!-- QUESTION TEMPLATE -->
+<!-- Repeat for each question -->
 
-  <section class="section">
-    <h2>VITILIGO — CLINICAL FEATURES</h2>
-    <div class="grid">
-      <div><label>Age at Onset (years)</label><input name="age_onset" type="number" min="0"></div>
-      <div><label>Disease Duration</label><input name="disease_duration" type="text" placeholder="e.g., 2 years / 6 months"></div>
-      <div style="grid-column:1 / -1">
-        <label>Type</label>
-        <select name="vit_type">
-          <option value="">-- select --</option>
-          <option>Segmental</option>
-          <option>Non-segmental</option>
-          <option>Mixed</option>
-        </select>
-      </div>
-      <div>
-        <label>Distribution</label>
-        <select name="distribution">
-          <option value="">-- select --</option>
-          <option>Generalized</option>
-          <option>Localized</option>
-          <option>Mucosal</option>
-        </select>
-      </div>
-      <div>
-        <label>Sites Involved (comma separated)</label>
-        <input name="sites_involved" type="text" placeholder="Face, Hands, Trunk, ...">
-      </div>
-      <div>
-        <label>Body Surface Area (% BSA / VASI)</label>
-        <input name="bsa" type="number" step="0.1" min="0">
-      </div>
-      <div>
-        <label>Disease Activity (VIDA score 0–4)</label>
-        <input name="vida" type="number" min="0" max="4">
-      </div>
-      <div style="grid-column:1 / -1">
-        <label>History of Koebnerization</label>
-        <div class="inline"><label><input type="radio" name="koebner" value="Yes"> Yes</label></div>
-        <div class="inline"><label><input type="radio" name="koebner" value="No" checked> No</label></div>
-      </div>
-      <div style="grid-column:1 / -1">
-        <label>Current / Previous Treatments</label>
-        <div><label><input type="checkbox" name="treatment" value="Topical"> Topical</label></div>
-        <div><label><input type="checkbox" name="treatment" value="Systemic"> Systemic</label></div>
-        <div><label><input type="checkbox" name="treatment" value="Phototherapy"> Phototherapy</label></div>
-        <div><label><input type="checkbox" name="treatment" value="None"> None</label></div>
-      </div>
-    </div>
-  </section>
+<div class="question">
+    <strong>1. Sadness</strong>
+    <div class="option"><label><input type="radio" name="q1" value="0" checked> 0 - I do not feel sad.</label></div>
+    <div class="option"><label><input type="radio" name="q1" value="1"> 1 - I feel sad.</label></div>
+    <div class="option"><label><input type="radio" name="q1" value="2"> 2 - I am sad all the time and I can't snap out of it.</label></div>
+    <div class="option"><label><input type="radio" name="q1" value="3"> 3 - I am so sad and unhappy that I can't stand it.</label></div>
+</div>
 
-  <section class="section">
-    <h2>PSYCHOMETRIC & QUALITY OF LIFE ASSESSMENT</h2>
-    <p class="muted">Below are the standardized scales. Enter the selected numeric score for each item (0–3 or 0–4 as specified).</p>
+<div class="question">
+    <strong>2. Pessimism</strong>
+    <div class="option"><label><input type="radio" name="q2" value="0" checked> 0 - I am not particularly discouraged about the future.</label></div>
+    <div class="option"><label><input type="radio" name="q2" value="1"> 1 - I feel discouraged about the future.</label></div>
+    <div class="option"><label><input type="radio" name="q2" value="2"> 2 - I feel I have nothing to look forward to.</label></div>
+    <div class="option"><label><input type="radio" name="q2" value="3"> 3 - I feel the future is hopeless and that things cannot improve.</label></div>
+</div>
 
-    <div id="bdi" class="question">
-      <h3>Beck's Depression Inventory II (BDI-II) — 21 items (0–3)</h3>
-      <div id="bdi_items"></div>
-      <div style="margin-top:8px">
-        <button type="button" onclick="computeBDI()">Compute BDI Total</button>
-        <span class="result">Total: <span id="bdi_total" class="score">0</span> — <span id="bdi_interp" class="muted"></span></span>
-      </div>
-    </div>
+<div class="question">
+    <strong>3. Sense of Failure</strong>
+    <div class="option"><label><input type="radio" name="q3" value="0" checked> 0 - I do not feel like a failure.</label></div>
+    <div class="option"><label><input type="radio" name="q3" value="1"> 1 - I feel I have failed more than the average person.</label></div>
+    <div class="option"><label><input type="radio" name="q3" value="2"> 2 - As I look back on my life, all I can see is a lot of failures.</label></div>
+    <div class="option"><label><input type="radio" name="q3" value="3"> 3 - I feel I am a complete failure as a person.</label></div>
+</div>
 
-    <div id="ham" class="question" style="margin-top:14px">
-      <h3>Hamilton Anxiety Rating Scale (HAM-A) — 14 items (0–4)</h3>
-      <div id="ham_items"></div>
-      <div style="margin-top:8px">
-        <button type="button" onclick="computeHAM()">Compute HAM-A Total</button>
-        <span class="result">Total: <span id="ham_total" class="score">0</span> — <span id="ham_interp" class="muted"></span></span>
-      </div>
-    </div>
+<div class="question">
+    <strong>4. Loss of Pleasure</strong>
+    <div class="option"><label><input type="radio" name="q4" value="0" checked> 0 - I get as much satisfaction out of things as I used to.</label></div>
+    <div class="option"><label><input type="radio" name="q4" value="1"> 1 - I don't enjoy things the way I used to.</label></div>
+    <div class="option"><label><input type="radio" name="q4" value="2"> 2 - I don't get real satisfaction out of anything anymore.</label></div>
+    <div class="option"><label><input type="radio" name="q4" value="3"> 3 - I am dissatisfied or bored with everything.</label></div>
+</div>
 
-    <div id="dlqi" class="question" style="margin-top:14px">
-      <h3>Dermatology Life Quality Index (DLQI) — 10 items (0–3)</h3>
-      <div id="dlqi_items"></div>
-      <div style="margin-top:8px">
-        <button type="button" onclick="computeDLQI()">Compute DLQI Total</button>
-        <span class="result">Total: <span id="dlqi_total" class="score">0</span> — <span id="dlqi_interp" class="muted"></span></span>
-      </div>
-    </div>
+<div class="question">
+    <strong>5. Guilty Feelings</strong>
+    <div class="option"><label><input type="radio" name="q5" value="0" checked> 0 - I don't feel particularly guilty.</label></div>
+    <div class="option"><label><input type="radio" name="q5" value="1"> 1 - I feel guilty a good part of the time.</label></div>
+    <div class="option"><label><input type="radio" name="q5" value="2"> 2 - I feel quite guilty most of the time.</label></div>
+    <div class="option"><label><input type="radio" name="q5" value="3"> 3 - I feel guilty all of the time.</label></div>
+</div>
 
-    <div id="vis" class="question" style="margin-top:14px">
-      <h3>Vitiligo Impact Scale-22 (VIS-22) — 22 items (0–3)</h3>
-      <div id="vis_items"></div>
-      <div style="margin-top:8px">
-        <button type="button" onclick="computeVIS()">Compute VIS-22 Total</button>
-        <span class="result">Total: <span id="vis_total" class="score">0</span></span>
-      </div>
-    </div>
-  </section>
+<div class="question">
+    <strong>6. Self-Punishment</strong>
+    <div class="option"><label><input type="radio" name="q6" value="0" checked> 0 - I don't feel I am being punished.</label></div>
+    <div class="option"><label><input type="radio" name="q6" value="1"> 1 - I feel I may be punished.</label></div>
+    <div class="option"><label><input type="radio" name="q6" value="2"> 2 - I expect to be punished.</label></div>
+    <div class="option"><label><input type="radio" name="q6" value="3"> 3 - I feel I am being punished.</label></div>
+</div>
 
-  <section class="section">
-    <h2>ADDITIONAL INFORMATION</h2>
-    <div>
-      <label>Any previous psychiatric illness/diagnosis</label>
-      <div class="inline"><label><input type="radio" name="prev_psy" value="Yes"> Yes</label></div>
-      <div class="inline"><label><input type="radio" name="prev_psy" value="No" checked> No</label></div>
-    </div>
-    <div style="margin-top:8px">
-      <label>Substance abuse history</label>
-      <div class="inline"><label><input type="radio" name="substance" value="Yes"> Yes</label></div>
-      <div class="inline"><label><input type="radio" name="substance" value="No" checked> No</label></div>
-    </div>
-    <div style="margin-top:8px">
-      <label>Any significant recent stressor</label>
-      <div class="inline"><label><input type="radio" name="stress" value="Yes"> Yes</label></div>
-      <div class="inline"><label><input type="radio" name="stress" value="No" checked> No</label></div>
-      <div style="margin-top:6px"><label>If yes, specify</label><input name="stress_specify" type="text"></div>
-    </div>
-    <div style="margin-top:8px">
-      <label>Referral to Psychiatry</label>
-      <div class="inline"><label><input type="radio" name="referral" value="Yes"> Yes</label></div>
-      <div class="inline"><label><input type="radio" name="referral" value="No" checked> No</label></div>
-    </div>
-    <div style="margin-top:8px">
-      <label>Remarks / Adverse events (if any)</label>
-      <textarea name="remarks" rows="3"></textarea>
-    </div>
-    <div style="margin-top:12px">
-      <label>Investigator Name</label><input name="investigator" type="text">
-      <label>Signature</label><input name="investigator_sign" type="text">
-      <label>Date</label><input name="investigator_date" type="date">
-    </div>
-  </section>
+<div class="question">
+    <strong>7. Self-Dislike</strong>
+    <div class="option"><label><input type="radio" name="q7" value="0" checked> 0 - I don't feel disappointed in myself.</label></div>
+    <div class="option"><label><input type="radio" name="q7" value="1"> 1 - I am disappointed in myself.</label></div>
+    <div class="option"><label><input type="radio" name="q7" value="2"> 2 - I am disgusted with myself.</label></div>
+    <div class="option"><label><input type="radio" name="q7" value="3"> 3 - I hate myself.</label></div>
+</div>
 
-  <div style="text-align:right;margin-top:12px">
-    <button type="button" onclick="exportJSON()">Export JSON</button>
-    <button type="button" onclick="previewSubmit()">Preview & Validate</button>
-  </div>
+<div class="question">
+    <strong>8. Self-Criticism</strong>
+    <div class="option"><label><input type="radio" name="q8" value="0" checked> 0 - I don't feel I am any worse than anybody else.</label></div>
+    <div class="option"><label><input type="radio" name="q8" value="1"> 1 - I am critical of myself for my weaknesses or mistakes.</label></div>
+    <div class="option"><label><input type="radio" name="q8" value="2"> 2 - I blame myself all the time for my faults.</label></div>
+    <div class="option"><label><input type="radio" name="q8" value="3"> 3 - I blame myself for everything bad that happens.</label></div>
+</div>
+
+<div class="question">
+    <strong>9. Suicidal Thoughts</strong>
+    <div class="option"><label><input type="radio" name="q9" value="0" checked> 0 - I don't have any thoughts of killing myself.</label></div>
+    <div class="option"><label><input type="radio" name="q9" value="1"> 1 - I have thoughts of killing myself, but I would not carry them out.</label></div>
+    <div class="option"><label><input type="radio" name="q9" value="2"> 2 - I would like to kill myself.</label></div>
+    <div class="option"><label><input type="radio" name="q9" value="3"> 3 - I would kill myself if I had the chance.</label></div>
+</div>
+
+<div class="question">
+    <strong>10. Crying</strong>
+    <div class="option"><label><input type="radio" name="q10" value="0" checked> 0 - I don't cry any more than usual.</label></div>
+    <div class="option"><label><input type="radio" name="q10" value="1"> 1 - I cry more now than I used to.</label></div>
+    <div class="option"><label><input type="radio" name="q10" value="2"> 2 - I cry all the time now.</label></div>
+    <div class="option"><label><input type="radio" name="q10" value="3"> 3 - I used to be able to cry, but now I can't cry even though I want to.</label></div>
+</div>
+
+<div class="question">
+    <strong>11. Irritability</strong>
+    <div class="option"><label><input type="radio" name="q11" value="0" checked> 0 - I am no more irritated by things than I ever was.</label></div>
+    <div class="option"><label><input type="radio" name="q11" value="1"> 1 - I am slightly more irritated now than usual.</label></div>
+    <div class="option"><label><input type="radio" name="q11" value="2"> 2 - I am quite annoyed or irritated a good deal of the time.</label></div>
+    <div class="option"><label><input type="radio" name="q11" value="3"> 3 - I feel irritated all the time.</label></div>
+</div>
+
+<div class="question">
+    <strong>12. Loss of Interest in Others</strong>
+    <div class="option"><label><input type="radio" name="q12" value="0" checked> 0 - I have not lost interest in other people.</label></div>
+    <div class="option"><label><input type="radio" name="q12" value="1"> 1 - I am less interested in other people than I used to be.</label></div>
+    <div class="option"><label><input type="radio" name="q12" value="2"> 2 - I have lost most of my interest in other people.</label></div>
+    <div class="option"><label><input type="radio" name="q12" value="3"> 3 - I have lost all of my interest in other people.</label></div>
+</div>
+
+<div class="question">
+    <strong>13. Indecisiveness</strong>
+    <div class="option"><label><input type="radio" name="q13" value="0" checked> 0 - I make decisions about as well as I ever could.</label></div>
+    <div class="option"><label><input type="radio" name="q13" value="1"> 1 - I put off making decisions more than I used to.</label></div>
+    <div class="option"><label><input type="radio" name="q13" value="2"> 2 - I have greater difficulty in making decisions than I used to.</label></div>
+    <div class="option"><label><input type="radio" name="q13" value="3"> 3 - I can't make decisions at all anymore.</label></div>
+</div>
+
+<div class="question">
+    <strong>14. Change in Body Image</strong>
+    <div class="option"><label><input type="radio" name="q14" value="0" checked> 0 - I don't feel that I look any worse than I used to.</label></div>
+    <div class="option"><label><input type="radio" name="q14" value="1"> 1 - I am worried that I am looking old or unattractive.</label></div>
+    <div class="option"><label><input type="radio" name="q14" value="2"> 2 - I feel there are permanent changes in my appearance that make me look unattractive.</label></div>
+    <div class="option"><label><input type="radio" name="q14" value="3"> 3 - I believe that I look ugly.</label></div>
+</div>
+
+<div class="question">
+    <strong>15. Decreased Work Capability</strong>
+    <div class="option"><label><input type="radio" name="q15" value="0" checked> 0 - I can work about as well as before.</label></div>
+    <div class="option"><label><input type="radio" name="q15" value="1"> 1 - It takes an extra effort to get started at doing something.</label></div>
+    <div class="option"><label><input type="radio" name="q15" value="2"> 2 - I have to push myself very hard to do anything.</label></div>
+    <div class="option"><label><input type="radio" name="q15" value="3"> 3 - I can't do any work at all.</label></div>
+</div>
+
+<div class="question">
+    <strong>16. Sleep Disturbances</strong>
+    <div class="option"><label><input type="radio" name="q16" value="0" checked> 0 - I can sleep as well as usual.</label></div>
+    <div class="option"><label><input type="radio" name="q16" value="1"> 1 - I don't sleep as well as I used to.</label></div>
+    <div class="option"><label><input type="radio" name="q16" value="2"> 2 - I wake up 1–2 hours earlier than usual and find it hard to get back to sleep.</label></div>
+    <div class="option"><label><input type="radio" name="q16" value="3"> 3 - I wake up several hours earlier than I used to and cannot get back to sleep.</label></div>
+</div>
+
+<div class="question">
+    <strong>17. Fatigue</strong>
+    <div class="option"><label><input type="radio" name="q17" value="0" checked> 0 - I don't get more tired than usual.</label></div>
+    <div class="option"><label><input type="radio" name="q17" value="1"> 1 - I get tired more easily than I used to.</label></div>
+    <div class="option"><label><input type="radio" name="q17" value="2"> 2 - I get tired from doing almost anything.</label></div>
+    <div class="option"><label><input type="radio" name="q17" value="3"> 3 - I am too tired to do anything.</label></div>
+</div>
+
+<div class="question">
+    <strong>18. Appetite Changes</strong>
+    <div class="option"><label><input type="radio" name="q18" value="0" checked> 0 - My appetite is no worse than usual.</label></div>
+    <div class="option"><label><input type="radio" name="q18" value="1"> 1 - My appetite is not as good as it used to be.</label></div>
+    <div class="option"><label><input type="radio" name="q18" value="2"> 2 - My appetite is much worse now.</label></div>
+    <div class="option"><label><input type="radio" name="q18" value="3"> 3 - I have no appetite at all anymore.</label></div>
+</div>
+
+<div class="question">
+    <strong>19. Weight Change</strong>
+    <div class="option"><label><input type="radio" name="q19" value="0" checked> 0 - I haven't lost much weight, if any, lately.</label></div>
+    <div class="option"><label><input type="radio" name="q19" value="1"> 1 - I have lost more than five pounds.</label></div>
+    <div class="option"><label><input type="radio" name="q19" value="2"> 2 - I have lost more than ten pounds.</label></div>
+    <div class="option"><label><input type="radio" name="q19" value="3"> 3 - I have lost more than fifteen pounds.</label></div>
+</div>
+
+<div class="question">
+    <strong>20. Somatic Concern</strong>
+    <div class="option"><label><input type="radio" name="q20" value="0" checked> 0 - I am no more worried about my health than usual.</label></div>
+    <div class="option"><label><input type="radio" name="q20" value="1"> 1 - I am worried about physical problems like aches, pains, upset stomach, or constipation.</label></div>
+    <div class="option"><label><input type="radio" name="q20" value="2"> 2 - I am very worried about physical problems and it's hard to think of much else.</label></div>
+    <div class="option"><label><input type="radio" name="q20" value="3"> 3 - I am so worried about my physical problems that I cannot think of anything else.</label></div>
+</div>
+
+<div class="question">
+    <strong>21. Loss of Interest in Sex</strong>
+    <div class="option"><label><input type="radio" name="q21" value="0" checked> 0 - I have not noticed any recent change in my interest in sex.</label></div>
+    <div class="option"><label><input type="radio" name="q21" value="1"> 1 - I am less interested in sex than I used to be.</label></div>
+    <div class="option"><label><input type="radio" name="q21" value="2"> 2 - I have almost no interest in sex.</label></div>
+    <div class="option"><label><input type="radio" name="q21" value="3"> 3 - I have lost interest in sex completely.</label></div>
+</div>
+
+<button type="button" onclick="calculateBDI()">Calculate Score</button>
+
+<div id="resultBox" class="result" style="display:none;">
+    <div><strong>Total Score: </strong><span id="score"></span></div>
+    <div><strong>Interpretation: </strong><span id="meaning"></span></div>
+</div>
 
 </form>
 
 <script>
-// Helper to create numeric selects for scales
-function makeSelect(name, max) {
-  const sel = document.createElement('select');
-  sel.name = name;
-  for (let i=0;i<=max;i++){ const opt=document.createElement('option'); opt.value=i; opt.textContent=i; sel.appendChild(opt); }
-  return sel;
+function calculateBDI() {
+    let total = 0;
+    for (let i = 1; i <= 21; i++) {
+        let val = Number(document.querySelector('input[name="q' + i + '"]:checked').value);
+        total += val;
+    }
+
+    document.getElementById("score").textContent = total;
+
+    let meaning = "";
+    if (total <= 13) meaning = "Minimal Depression";
+    else if (total <= 19) meaning = "Mild Depression";
+    else if (total <= 28) meaning = "Moderate Depression";
+    else meaning = "Severe Depression";
+
+    document.getElementById("meaning").textContent = meaning;
+    document.getElementById("resultBox").style.display = "block";
 }
-
-// Populate BDI (21 items, 0-3)
-const bdiLabels = [
-"Sadness","Pessimism","Sense of Failure","Loss of Pleasure","Guilty Feelings","Self-Punishment","Self-Dislike","Self-Criticism",
-"Suicidal Thoughts","Crying","Irritability","Loss of Interest in Others","Indecisiveness","Change in Body Image","Decreased Work Capability",
-"Sleep Disturbances","Fatigue","Appetite Changes","Weight Change","Somatic Concern","Loss of Interest in Sex"];
-const bdiDiv = document.getElementById('bdi_items');
-bdiLabels.forEach((lab,i)=>{
-  const d=document.createElement('div'); d.className='grid';
-  const l=document.createElement('label'); l.textContent=(i+1)+". "+lab;
-  const sel=makeSelect('bdi_'+(i+1),3);
-  d.appendChild(l); d.appendChild(sel); bdiDiv.appendChild(d);
-});
-
-// HAM-A (14 items, 0-4)
-const hamLabels = [
-"Anxious mood","Tension","Fears","Insomnia","Intellectual (cognitive) impairment","Depressed mood","Somatic (muscular)",
-"Somatic (sensory)","Cardiovascular symptoms","Respiratory symptoms","Gastrointestinal symptoms","Genitourinary symptoms",
-"Autonomic symptoms","Behavior at interview"];
-const hamDiv = document.getElementById('ham_items');
-hamLabels.forEach((lab,i)=>{
-  const d=document.createElement('div'); d.className='grid';
-  const l=document.createElement('label'); l.textContent=(i+1)+". "+lab;
-  const sel=makeSelect('ham_'+(i+1),4);
-  d.appendChild(l); d.appendChild(sel); hamDiv.appendChild(d);
-});
-
-// DLQI (10 items, 0-3) - use 0-3 (Not relevant counted as 0)
-const dlqiLabels = [
-"Itchy, sore or painful skin?","Embarrassed or self-conscious?","Interfered with shopping/home? (Not relevant = 0)",
-"Influenced clothes you wear?","Affected social/leisure activities?","Made difficult to do sport? (Not relevant = 0)",
-"Prevented you from working/studying?","Problems with partner/relatives?","Caused sexual difficulties? (Not relevant = 0)",
-"Has treatment been a problem?"];
-const dlqiDiv = document.getElementById('dlqi_items');
-dlqiLabels.forEach((lab,i)=>{
-  const d=document.createElement('div'); d.className='grid';
-  const l=document.createElement('label'); l.textContent=(i+1)+". "+lab;
-  const sel=makeSelect('dlqi_'+(i+1),3);
-  d.appendChild(l); d.appendChild(sel); dlqiDiv.appendChild(d);
-});
-
-// VIS-22 (22 items, 0-3) with item 22 reverse-scored in computeVIS
-const visLabels = [
-"I feel embarrassed because of my skin condition.","I feel anxious when I go out because of my white patches.",
-"I feel sad that I have vitiligo.","I feel depressed due to my skin condition.","My self-confidence has reduced due to my vitiligo.",
-"I feel people look at me strangely because of my vitiligo.","I feel ashamed to tell others that I have this condition.",
-"I often avoid public places due to fear of judgment or questions.","I try to hide my white patches as much as possible.","I feel nervous or shy during social interactions.",
-"I feel lonely or isolated due to my skin condition.","Vitiligo affects the clothes I choose to wear.","I avoid outdoor activities during the day as the patches become more visible.",
-"My skin condition affects my concentration or daily tasks.","I feel stressed about managing my condition.","My skin condition has affected my relationship with family or friends.","I feel my partner (or potential partner) is/will be less attracted because of my vitiligo.",
-"I have faced teasing or bullying due to my skin condition.","I feel that people around me don’t understand how I feel about my skin.",
-"I am worried about how vitiligo may affect my marriage prospects.","I avoid forming close relationships due to my skin condition.","I feel supported by my family or friends regarding this condition. (reverse-scored)"];
-const visDiv = document.getElementById('vis_items');
-visLabels.forEach((lab,i)=>{
-  const d=document.createElement('div'); d.className='grid';
-  const l=document.createElement('label'); l.textContent=(i+1)+". "+lab;
-  const sel=makeSelect('vis_'+(i+1),3);
-  d.appendChild(l); d.appendChild(sel); visDiv.appendChild(d);
-});
-
-// Compute functions and interpretation text
-function computeBDI(){
-  let total=0;
-  for(let i=1;i<=21;i++){ total += Number(document.querySelector('[name=bdi_'+i+']').value); }
-  document.getElementById('bdi_total').textContent = total;
-  const interp = total<=13? 'Minimal or no depression' : total<=19? 'Mild depression' : total<=28? 'Moderate depression' : 'Severe depression';
-  document.getElementById('bdi_interp').textContent = interp;
-  return total;
-}
-function computeHAM(){
-  let total=0;
-  for(let i=1;i<=14;i++){ total += Number(document.querySelector('[name=ham_'+i+']').value); }
-  document.getElementById('ham_total').textContent = total;
-  const interp = total<=17? 'Mild anxiety' : total<=24? 'Moderate anxiety' : total<=30? 'Severe anxiety' : 'Very severe anxiety';
-  document.getElementById('ham_interp').textContent = interp;
-  return total;
-}
-function computeDLQI(){
-  let total=0;
-  for(let i=1;i<=10;i++){ total += Number(document.querySelector('[name=dlqi_'+i+']').value); }
-  document.getElementById('dlqi_total').textContent = total;
-  const interp = total<=1? 'No effect' : total<=5? 'Small effect' : total<=10? 'Moderate effect' : total<=20? 'Very large effect' : 'Extremely large effect';
-  document.getElementById('dlqi_interp').textContent = interp;
-  return total;
-}
-function computeVIS(){
-  let total=0;
-  for(let i=1;i<=22;i++){
-    let v = Number(document.querySelector('[name=vis_'+i+']').value);
-    // item 22 is reverse scored
-    if(i===22){ v = 3 - v; }
-    total += v;
-  }
-  document.getElementById('vis_total').textContent = total;
-  return total;
-}
-
-// Export form values as JSON for easy import
-function exportJSON(){
-  // compute scores first
-  computeBDI(); computeHAM(); computeDLQI(); computeVIS();
-  const form = document.getElementById('crfForm');
-  const data = new FormData(form);
-  const obj = {};
-  data.forEach((v,k)=>{
-    // handle multiple entries for checkboxes etc.
-    if(obj[k]!==undefined){
-      if(!Array.isArray(obj[k])) obj[k]=[obj[k]];
-      obj[k].push(v);
-    } else obj[k]=v;
-  });
-  // add computed totals
-  obj['BDI_total'] = document.getElementById('bdi_total').textContent;
-  obj['HAM_total'] = document.getElementById('ham_total').textContent;
-  obj['DLQI_total'] = document.getElementById('dlqi_total').textContent;
-  obj['VIS_total'] = document.getElementById('vis_total').textContent;
-  const out = JSON.stringify(obj, null, 2);
-  // create a download link
-  const blob = new Blob([out], {type: 'application/json'});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a'); a.href=url; a.download='crf_response.json'; a.click();
-  URL.revokeObjectURL(url);
-}
-
-// quick preview and validate required-ish fields (simple)
-function previewSubmit(){
-  computeBDI(); computeHAM(); computeDLQI(); computeVIS();
-  const patient = document.getElementById('patient_name').value || '[No name entered]';
-  const crf = document.getElementById('crf_no').value || '[No CRF no]';
-  const summary = `Patient: ${patient}\nCRF No: ${crf}\nBDI: ${document.getElementById('bdi_total').textContent}\nHAM-A: ${document.getElementById('ham_total').textContent}\nDLQI: ${document.getElementById('dlqi_total').textContent}\nVIS-22: ${document.getElementById('vis_total').textContent}`;
-  alert('Preview:\n\n' + summary + '\n\n(Use Export JSON to save responses.)');
-}
-
 </script>
 
 </body>
