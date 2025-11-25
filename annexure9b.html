@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>VIS-22 (हिन्दी) — विटिलिगो इम्पैक्ट स्केल-22</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.45; padding: 20px; color:#111; }
+    h1 { font-size:1.4rem; margin-bottom:0.2rem; }
+    h2 { font-size:1.05rem; margin-top:1.2rem; }
+    p.instructions { background:#f7f7f7; padding:10px; border-radius:6px; }
+    fieldset { margin:12px 0; padding:12px; border-radius:6px; border:1px solid #ddd; }
+    legend { font-weight:600; }
+    .question { margin:10px 0; }
+    .qtext { display:block; margin-bottom:6px; }
+    .options label { margin-right:12px; }
+    .note { font-size:0.95rem; color:#444; margin-top:8px; }
+    .submit-row { margin-top:18px; }
+    button { padding:8px 14px; font-size:1rem; }
+    .reverse { font-style:italic; color:#555; font-size:0.95rem; }
+  </style>
+</head>
+<body>
+  <h1>विटिलिगो इम्पैक्ट स्केल-22 (VIS-22)</h1>
+
+  <p class="instructions">
+    <strong>निर्देश (Instructions):</strong> कृपया प्रत्येक कथन को ध्यान से पढ़ें और बताएँ कि पिछले एक से दो हफ्तों में यह आपके अनुभव के अनुरूप कितना सच है। आपके उत्तर गोपनीय रखे जाएँगे। प्रत्येक कथन के लिए एक उपयुक्त उत्तर चुनें:
+  </p>
+
+  <ul>
+    <li>0 = कभी नहीं</li>
+    <li>1 = कभी-कभी</li>
+    <li>2 = अक्सर</li>
+    <li>3 = हमेशा</li>
+  </ul>
+
+  <form id="vis22-form">
+    <!-- व्यक्तिगत/भावनात्मक प्रभाव (1-11) -->
+    <fieldset>
+      <legend>व्यक्तिगत/भावनात्मक प्रभाव</legend>
+
+      <div class="question" id="q1">
+        <span class="qtext">1. मैं अपनी त्वचा की स्थिति के कारण शर्मिंदा महसूस करता/करती हूँ।</span>
+        <div class="options">
+          <label><input type="radio" name="q1" value="0" required> 0 = कभी नहीं</label>
+          <label><input type="radio" name="q1" value="1"> 1 = कभी-कभी</label>
+          <label><input type="radio" name="q1" value="2"> 2 = अक्सर</label>
+          <label><input type="radio" name="q1" value="3"> 3 = हमेशा</label>
+        </div>
+      </div>
+
+      <div class="question" id="q2">
+        <span class="qtext">2. मैं घर से बाहर जाते समय अपने सफेद धब्बों के कारण चिंतित रहता/रहती हूँ।</span>
+        <div class="options">
+          <label><input type="radio" name="q2" value="0" required> 0 = कभी नहीं</label>
+          <label><input type="radio" name="q2" value="1"> 1 = कभी-कभी</label>
+          <label><input type="radio" name="q2" value="2"> 2 = अक्सर</label>
+          <label><input type="radio" name="q2" value="3"> 3 = हमेशा</label>
+        </div>
+      </div>
+
+      <div class="question" id="q3">
+        <span class="qtext">3. मुझे इस बात का दुःख है कि मुझे विटिलिगो है।</span>
+        <div class="options">
+          <label><input type="radio" name="q3" value="0" required> 0 = कभी नहीं</label>
+          <label><input type="radio" name="q3" value="1"> 1 = कभी-कभी</label>
+          <label><input type="radio" name="q3" value="2"> 2 = अक्सर</label>
+          <label><input type="radio" name="q3" value="3"> 3 = हमेशा</label>
+        </div>
+      </div>
+
+      <div class="question" id="q4">
+        <span class="qtext">4. मैं अपनी त्वचा की स्थिति के कारण उदास रहता/रहती हूँ।</span>
+        <div class="options">
+          <label><input type="radio" name="q4" value="0" required> 0 = कभी नहीं</label>
+          <label><input type="radio" name="q4" value="1"> 1 = कभी-कभी</label>
+          <label><input type="radio" name="q4" value="2"> 2 = अक्सर</label>
+          <label><input type="radio" name="q4" value="3"> 3 = हमेशा</label>
+        </div>
+      </div>
+
+      <div class="question" id="q5">
+        <span class="qtext">5. मेरी आत्म-विश्वास की भावना इस रोग के कारण कम हुई है।</span>
+        <div class="options">
+          <label><input type="radio" name="q5" value="0" required> 0 = कभी नहीं</label>
+          <label><input type="radio" name="q5" value="1"> 1 = कभी-कभी</label>
+          <label><input type="radio" name="q5" value="2"> 2 = अक्सर</label>
+          <label><input type="radio" name="q5" value="3"> 3 = हमेशा</label>
+        </div>
+      </div>
+
+      <div class="question" id="q6">
+        <span class="qtext">6. मुझे लगता है कि लोग मेरी त्वचा को अजीब तरह से देखते हैं।</span>
+        <div class="options">
+          <label><input type="radio" name="q6" value="0" required> 0 = कभी नहीं</label>
+          <label><input type="radio" name="q6" value="1"> 1 = कभी-कभी</label>
+          <label><input type="radio" name="q6" value="2"> 2 = अक्सर</label>
+          <label><input type="radio" name="q6" value="3"> 3 = हमेशा</label>
+        </div>
+      </div>
+
+      <div class="question" id="q7">
+        <span class="qtext">7. मैं अपने आस-पास के लोगों को यह बताने में शर्म महसूस करता/करती हूँ कि मुझे यह रोग है।</span>
+        <div class="options">
+          <label><input type="radio" name="q7" value="0" required> 0 = कभी नहीं</label>
+          <label><input type="radio" name="q7" value="1"> 1 = कभी-कभी</label>
+          <label><input type="radio" name="q7" value="2"> 2 = अक्सर</label>
+          <label><input type="radio" name="q7" value="3"> 3 = हमेशा</label>
+        </div>
+      </div>
+
+      <div class="question" id="q8">
+        <span class="qtext">8. मैं लोगों के सवाल या नज़रों के डर से सार्वजनिक स्थानों पर जाने से बचता/बचती हूँ।</span>
+        <div class="options">
+          <label><input type="radio" name="q8" value="0" required> 0 = कभी नहीं</label>
+          <label><input type="radio" name="q8" value="1"> 1 = कभी-कभी</label>
+          <label><input type="radio" name="q8" value="2"> 2 = अक्सर</label>
+          <label><input type="radio" name="q8" value="3"> 3 = हमेशा</label>
+        </div>
+      </div>
+
+      <div class="question" id="q9">
+        <span class="qtext">9. मैं अपने सफेद धब्बों को छिपाने का प्रयास करता/करती हूँ।</span>
+        <div class="options">
+          <label><input type="radio" name="q9" value="0" required> 0 = कभी नहीं</label>
+          <label><input type="radio" name="q9" value="1"> 1 = कभी-कभी</label>
+          <label><input type="radio" name="q9" value="2"> 2 = अक्सर</label>
+          <label><input type="radio" name="q9" value="3"> 3 = हमेशा</label>
+        </div>
+      </div>
+
+      <div class="question" id="q10">
+        <span class="qtext">10. सामाजिक बातचीत में मैं घबराहट या झिझक महसूस करता/करती हूँ।</span>
+        <div class="options">
+          <label><input type="radio" name="q10" value="0" required> 0 = कभी नहीं</label>
+          <label><input type="radio" name="q10" value="1"> 1 = कभी-कभी</label>
+          <label><input type="radio" name="q10" value="2"> 2 = अक्सर</label>
+          <label><input type="radio" name="q10" value="3"> 3 = हमेशा</label>
+        </div>
+      </div>
+
+      <div class="question" id="q11">
+        <span class="qtext">11. मैं खुद को अकेला और अलग-थलग महसूस करता/करती हूँ।</span>
+        <div class="options">
+          <label><input type="radio" name="q11" value="0" required> 0 = कभी नहीं</label>
+          <label><input type="radio" name="q11" value="1"> 1 = कभी-कभी</label>
+          <label><input type="radio" name="q11" value="2"> 2 = अक्सर</label>
+          <label><input type="radio" name="q11" value="3"> 3 = हमेशा</label>
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- दैनिक क्रियाकलापों पर प्रभाव (12-15) -->
+    <fieldset>
+      <legend>दैनिक क्रियाकलापों पर प्रभाव</legend>
+
+      <div class="question" id="q12">
+        <span class="qtext">12. मेरी त्वचा की स्थिति इस बात को प्रभावित करती है कि मैं कौनसे कपड़े पहनता/पहनती हूँ।</span>
+        <div class="options">
+          <label><input type="radio" name="q12" value="0" required> 0 = कभी नहीं</label>
+          <label><input type="radio" name="q12" value="1"> 1 = कभी-कभी</label>
+          <label><input type="radio" name="q12" value="2"> 2 = अक्सर</label>
+          <label><input type="radio" name="q12" value="3"> 3 = हमेशा</label>
+        </div>
+      </div>
+
+      <div class="question" id="q13">
+        <span class="qtext">13. मैं दिन में बाहर जाने से बचता/बचती हूँ क्योंकि मेरे धब्बे ज़्यादा दिखते हैं।</span>
+        <div class="options">
+          <label><input type="radio" name="q13" value="0" required> 0 = कभी नहीं</label>
+          <label><input type="radio" name="q13" value="1"> 1 = कभी-कभी</label>
+          <label><input type="radio" name="q13" value="2"> 2 = अक्सर</label>
+          <label><input type="radio" name="q13" value="3"> 3 = हमेशा</label>
+        </div>
+      </div>
+
+      <div class="question" id="q14">
+        <span class="qtext">14. मेरी त्वचा की स्थिति के कारण मेरा ध्यान केंद्रित नहीं रहता या काम में परेशानी आती है।</span>
+        <div class="options">
+          <label><input type="radio" name="q14" value="0" required> 0 = कभी नहीं</label>
+          <label><input type="radio" name="q14" value="1"> 1 = कभी-कभी</label>
+          <label><input type="radio" name="q14" value="2"> 2 = अक्सर</label>
+          <label><input type="radio" name="q14" value="3"> 3 = हमेशा</label>
+        </div>
+      </div>
+
+      <div class="question" id="q15">
+        <span class="qtext">15. इस रोग का प्रबंधन करना मेरे लिए तनावपूर्ण होता है।</span>
+        <div class="options">
+          <label><input type="radio" name="q15" value="0" required> 0 = कभी नहीं</label>
+          <label><input type="radio" name="q15" value="1"> 1 = कभी-कभी</label>
+          <label><input type="radio" name="q15" value="2"> 2 = अक्सर</label>
+          <label><input type="radio" name="q15" value="3"> 3 = हमेशा</label>
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- सामाजिक और पारिवारिक प्रभाव (16-22) -->
+    <fieldset>
+      <legend>सामाजिक और पारिवारिक प्रभाव</legend>
+
+      <div class="question" id="q16">
+        <span class="qtext">16. मेरी त्वचा की स्थिति ने मेरे परिवार के सदस्यों या दोस्तों के साथ रिश्तों को प्रभावित किया है।</span>
+        <div class="options">
+          <label><input type="radio" name="q16" value="0" required> 0 = कभी नहीं</label>
+          <label><input type="radio" name="q16" value="1"> 1 = कभी-कभी</label>
+          <label><input type="radio" name="q16" value="2"> 2 = अक्सर</label>
+          <label><input type="radio" name="q16" value="3"> 3 = हमेशा</label>
+        </div>
+      </div>
+
+      <div class="question" id="q17">
+        <span class="qtext">17. मुझे लगता है कि मेरा जीवनसाथी (या भावी साथी) मेरी त्वचा के कारण मुझमें कम आकर्षण महसूस करेगा/करेगी।</span>
+        <div class="options">
+          <label><input type="radio" name="q17" value="0" required> 0 = कभी नहीं</label>
+          <label><input type="radio" name="q17" value="1"> 1 = कभी-कभी</label>
+          <label><input type="radio" name="q17" value="2"> 2 = अक्सर</label>
+          <label><input type="radio" name="q17" value="3"> 3 = हमेशा</label>
+        </div>
+      </div>
+
+      <div class="question" id="q18">
+        <span class="qtext">18. मुझे इस रोग के कारण चिढ़ाया गया है या अपमानित किया गया है।</span>
+        <div class="options">
+          <label><input type="radio" name="q18" value="0" required> 0 = कभी नहीं</label>
+          <label><input type="radio" name="q18" value="1"> 1 = कभी-कभी</label>
+          <label><input type="radio" name="q18" value="2"> 2 = अक्सर</label>
+          <label><input type="radio" name="q18" value="3"> 3 = हमेशा</label>
+        </div>
+      </div>
+
+      <div class="question" id="q19">
+        <span class="qtext">19. मुझे लगता है कि मेरे आसपास के लोग नहीं समझते कि मैं अपनी त्वचा की स्थिति को लेकर कैसा महसूस करता/करती हूँ।</span>
+        <div class="options">
+          <label><input type="radio" name="q19" value="0" required> 0 = कभी नहीं</label>
+          <label><input type="radio" name="q19" value="1"> 1 = कभी-कभी</label>
+          <label><input type="radio" name="q19" value="2"> 2 = अक्सर</label>
+          <label><input type="radio" name="q19" value="3"> 3 = हमेशा</label>
+        </div>
+      </div>
+
+      <div class="question" id="q20">
+        <span class="qtext">20. मैं चिंतित हूँ कि यह रोग मेरी शादी की संभावनाओं को प्रभावित करेगा।</span>
+        <div class="options">
+          <label><input type="radio" name="q20" value="0" required> 0 = कभी नहीं</label>
+          <label><input type="radio" name="q20" value="1"> 1 = कभी-कभी</label>
+          <label><input type="radio" name="q20" value="2"> 2 = अक्सर</label>
+          <label><input type="radio" name="q20" value="3"> 3 = हमेशा</label>
+        </div>
+      </div>
+
+      <div class="question" id="q21">
+        <span class="qtext">21. मैं नए रिश्ते बनाने से बचता/बचती हूँ क्योंकि मुझे विटिलिगो है।</span>
+        <div class="options">
+          <label><input type="radio" name="q21" value="0" required> 0 = कभी नहीं</label>
+          <label><input type="radio" name="q21" value="1"> 1 = कभी-कभी</label>
+          <label><input type="radio" name="q21" value="2"> 2 = अक्सर</label>
+          <label><input type="radio" name="q21" value="3"> 3 = हमेशा</label>
+        </div>
+      </div>
+
+      <div class="question" id="q22">
+        <span class="qtext">22. मुझे लगता है कि मेरे परिवार और दोस्त मेरी इस स्थिति को लेकर मुझे सहारा देते हैं। <span class="reverse">(यह आइटम रिवर्स-स्कोर किया जाएगा)</span></span>
+        <div class="options">
+          <label><input type="radio" name="q22" value="0" data-reverse="true" required> 0 = हमेशा</label>
+          <label><input type="radio" name="q22" value="1" data-reverse="true"> 1 = अक्सर</label>
+          <label><input type="radio" name="q22" value="2" data-reverse="true"> 2 = कभी-कभी</label>
+          <label><input type="radio" name="q22" value="3" data-reverse="true"> 3 = कभी नहीं</label>
+        </div>
+      </div>
+
+    </fieldset>
+
+    <div class="note">
+      <strong>स्कोर निर्धारण (Scoring Instructions):</strong><br>
+      - प्रत्येक आइटम के लिए चयनित मान (0–3) को जोड़ें।<br>
+      - <em>आइटम 22</em> (परिवार/दोस्तों का सहारा) को उल्टा स्कोर (reverse-score) करें: यानी फॉर्म में चयन किए गए मान को उल्टा लें (यदि आप यहाँ 0 चुनते हैं तो स्कोर 3; 1 => 2; 2 => 1; 3 => 0).<br>
+      - कुल स्कोर = (सभी 22 आइटमों के समायोजित मानों का योग)।  
+    </div>
+
+    <div class="submit-row">
+      <button type="submit">स्कोर देखें</button>
+    </div>
+  </form>
+
+  <script>
+    // सरल क्लाइंट-साइड स्कोर कैलकुलेटर (ब्राउज़र में काम करेगा)
+    document.getElementById('vis22-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = e.target;
+      let total = 0;
+      const missing = [];
+      for (let i = 1; i <= 22; i++) {
+        const name = 'q' + i;
+        const val = form[name].value;
+        if (val === undefined || val === "") {
+          missing.push(i);
+        } else {
+          let num = parseInt(val, 10);
+          // आइटम 22 रिवर्स-स्कोर (यहाँ index 22)
+          if (i === 22) {
+            // form stores values in reversed wording; convert to score where 0(always)=>3, 1=>2, 2=>1, 3=>0
+            num = 3 - num;
+          }
+          total += num;
+        }
+      }
+      if (missing.length) {
+        alert('कृपया सभी प्रश्नों के उत्तर दें। (मिसिंग: ' + missing.join(', ') + ')');
+        return;
+      }
+      alert('आपका कुल VIS-22 स्कोर: ' + total + ' (0 — कम प्रभाव, 66 — अधिकतम प्रभाव)');
+    });
+  </script>
+</body>
+</html>
