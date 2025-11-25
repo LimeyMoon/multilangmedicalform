@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>त्वचा जीवन गुणवत्ता सूचकांक (DLQI) — फॉर्म (हिंदी)</title>
+  <style>
+    body{font-family: system-ui, -apple-system, 'Noto Sans', Roboto, Arial; max-width:900px;margin:24px auto;padding:18px;line-height:1.5;color:#111}
+    h1,h2{margin:6px 0}
+    .question{border:1px solid #e6e6e6;padding:12px;border-radius:8px;margin:12px 0;background:#fafafa}
+    .options{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+    label{display:inline-flex;align-items:center;gap:6px}
+    .actions{margin-top:18px}
+    button{padding:8px 12px;border-radius:6px;border:1px solid #bbb;background:#fff;cursor:pointer}
+    .result{margin-top:14px;padding:12px;border-radius:8px;background:#f3f5ff;border:1px solid #d6dbff}
+    small.note{color:#555}
+  </style>
+</head>
+<body>
+  <h1>त्वचा जीवन गुणवत्ता सूचकांक (DLQI)</h1>
+  <p>निर्देश: यह प्रश्नावली आपकी त्वचा की समस्या के कारण पिछले एक सप्ताह में आपके जीवन पर हुए प्रभाव का आकलन करती है। कृपया प्रत्येक प्रश्न का उत्तर दें और वह उत्तर चुनें जो आपकी स्थिति के लिए सबसे उपयुक्त हो।</p>
+
+  <form id="dlqiForm">
+
+    <div class="question">
+      <strong>1. पिछले एक सप्ताह में, आपकी त्वचा कितनी खुजलीदार, दर्दनाक, चुभती या जलनभरी रही है?</strong>
+      <div class="options">
+        <label><input type="radio" name="q1" value="3" required>बहुत अधिक (3)</label>
+        <label><input type="radio" name="q1" value="2">काफी (2)</label>
+        <label><input type="radio" name="q1" value="1">थोड़ी (1)</label>
+        <label><input type="radio" name="q1" value="0">बिल्कुल नहीं (0)</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <strong>2. पिछले एक सप्ताह में, आपकी त्वचा के कारण आप कितने शर्मिंदा या आत्म-सचेत हुए?</strong>
+      <div class="options">
+        <label><input type="radio" name="q2" value="3" required>बहुत अधिक (3)</label>
+        <label><input type="radio" name="q2" value="2">काफी (2)</label>
+        <label><input type="radio" name="q2" value="1">थोड़ी (1)</label>
+        <label><input type="radio" name="q2" value="0">बिल्कुल नहीं (0)</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <strong>3. आपकी त्वचा की समस्या ने घर के कामों या खरीदारी आदि को करने में कितनी बाधा पहुँचाई?</strong>
+      <div class="options">
+        <label><input type="radio" name="q3" value="3" required>बहुत अधिक (3)</label>
+        <label><input type="radio" name="q3" value="2">काफी (2)</label>
+        <label><input type="radio" name="q3" value="1">थोड़ी (1)</label>
+        <label><input type="radio" name="q3" value="0">बिल्कुल नहीं (0)</label>
+        <label><input type="radio" name="q3" value="0">लागू नहीं (-)</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <strong>4. आपकी त्वचा के कारण आपके कपड़े पहनने की पसंद पर कितना असर पड़ा?</strong>
+      <div class="options">
+        <label><input type="radio" name="q4" value="3" required>बहुत अधिक (3)</label>
+        <label><input type="radio" name="q4" value="2">काफी (2)</label>
+        <label><input type="radio" name="q4" value="1">थोड़ी (1)</label>
+        <label><input type="radio" name="q4" value="0">बिल्कुल नहीं (0)</label>
+        <label><input type="radio" name="q4" value="0">लागू नहीं (-)</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <strong>5. क्या आपकी त्वचा की समस्या ने सामाजिक/मनोरंजन गतिविधियों में भाग लेने में मुश्किल पैदा की?</strong>
+      <div class="options">
+        <label><input type="radio" name="q5" value="3" required>बहुत अधिक (3)</label>
+        <label><input type="radio" name="q5" value="2">काफी (2)</label>
+        <label><input type="radio" name="q5" value="1">थोड़ी (1)</label>
+        <label><input type="radio" name="q5" value="0">बिल्कुल नहीं (0)</label>
+        <label><input type="radio" name="q5" value="0">लागू नहीं (-)</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <strong>6. क्या आपकी त्वचा की स्थिति ने खेलकूद या व्यायाम करने में रुकावट डाली?</strong>
+      <div class="options">
+        <label><input type="radio" name="q6" value="3" required>बहुत अधिक (3)</label>
+        <label><input type="radio" name="q6" value="2">काफी (2)</label>
+        <label><input type="radio" name="q6" value="1">थोड़ी (1)</label>
+        <label><input type="radio" name="q6" value="0">बिल्कुल नहीं (0)</label>
+        <label><input type="radio" name="q6" value="0">लागू नहीं (-)</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <strong>7. पिछले सप्ताह क्या आपकी त्वचा की समस्या के कारण आप काम या पढ़ाई नहीं कर सके?</strong>
+      <div class="options">
+        <label><input type="radio" name="q7" value="3" required>हाँ (3)</label>
+        <label><input type="radio" name="q7" value="2">नहीं — समस्या की गंभीरता: काफी (2)</label>
+        <label><input type="radio" name="q7" value="1">नहीं — थोड़ी (1)</label>
+        <label><input type="radio" name="q7" value="0">नहीं — बिल्कुल नहीं (0)</label>
+        <label><input type="radio" name="q7" value="0">लागू नहीं (-)</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <strong>8. आपकी त्वचा की बीमारी ने आपके जीवन साथी, परिवार या दोस्तों के साथ आपके संबंधों को किस हद तक प्रभावित किया?</strong>
+      <div class="options">
+        <label><input type="radio" name="q8" value="3" required>बहुत अधिक (3)</label>
+        <label><input type="radio" name="q8" value="2">काफी (2)</label>
+        <label><input type="radio" name="q8" value="1">थोड़ी (1)</label>
+        <label><input type="radio" name="q8" value="0">बिल्कुल नहीं (0)</label>
+        <label><input type="radio" name="q8" value="0">लागू नहीं (-)</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <strong>9. क्या आपकी त्वचा की समस्या ने यौन गतिविधियों में कोई समस्या पैदा की?</strong>
+      <div class="options">
+        <label><input type="radio" name="q9" value="3" required>बहुत अधिक (3)</label>
+        <label><input type="radio" name="q9" value="2">काफी (2)</label>
+        <label><input type="radio" name="q9" value="1">थोड़ी (1)</label>
+        <label><input type="radio" name="q9" value="0">बिल्कुल नहीं (0)</label>
+        <label><input type="radio" name="q9" value="0">लागू नहीं (-)</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <strong>10. क्या आपकी त्वचा की इलाज की प्रक्रिया (जैसे समय लगना, झंझट, घर पर दाग पड़ना इत्यादि) आपके लिए परेशानी बनी?</strong>
+      <div class="options">
+        <label><input type="radio" name="q10" value="3" required>बहुत अधिक (3)</label>
+        <label><input type="radio" name="q10" value="2">काफी (2)</label>
+        <label><input type="radio" name="q10" value="1">थोड़ी (1)</label>
+        <label><input type="radio" name="q10" value="0">बिल्कुल नहीं (0)</label>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button type="button" id="calcBtn">कुल स्कोर निकालें</button>
+      <button type="reset">रीसेट</button>
+      <button type="button" onclick="window.print()">प्रिंट</button>
+    </div>
+
+    <div id="result" class="result" style="display:none"></div>
+
+  </form>
+
+  <script>
+    function interpret(score){
+      if(score<=1) return '0–1: कोई प्रभाव नहीं';
+      if(score<=5) return '2–5: छोटा प्रभाव';
+      if(score<=10) return '6–10: औसत प्रभाव';
+      if(score<=20) return '11–20: बहुत बड़ा प्रभाव';
+      return '21–30: अत्यंत गंभीर प्रभाव';
+    }
+
+    document.getElementById('calcBtn').addEventListener('click', function(){
+      const form = document.getElementById('dlqiForm');
+      const data = new FormData(form);
+      const questions = [1,2,3,4,5,6,7,8,9,10];
+      let missing = [];
+      let total = 0;
+      for(const q of questions){
+        const val = data.get('q'+q);
+        if(val === null){ missing.push(q); }
+        else { total += parseInt(val,10) || 0; }
+      }
+      if(missing.length>0){
+        alert('कृपया सभी प्रश्नों के उत्तर चुनें। प्रश्न: ' + missing.join(', '));
+        return;
+      }
+      const res = document.getElementById('result');
+      res.style.display='block';
+      res.innerHTML = '<strong>कुल स्कोर: ' + total + ' / 30</strong><br><small class="note">(हर उत्तर: 0 से 3)</small><p><em>' + interpret(total) + '</em></p>';
+    });
+  </script>
+
+  <hr>
+  <p><small>स्कोर व्याख्या:<br>
+  0–1: कोई प्रभाव नहीं<br>
+  2–5: छोटा प्रभाव<br>
+  6–10: औसत प्रभाव<br>
+  11–20: बहुत बड़ा प्रभाव<br>
+  21–30: अत्यंत गंभीर प्रभाव</small></p>
+</body>
+</html>
+
